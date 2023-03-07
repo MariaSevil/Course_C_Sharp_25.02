@@ -7,6 +7,7 @@ void Find(int num)
     else
     Console.WriteLine("Нет");
 }
-Find(int.Parse(Console.ReadLine()));
+Find(int.Parse(Console.ReadLine()!));
+
 
 
