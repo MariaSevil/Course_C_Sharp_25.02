@@ -3,9 +3,9 @@
 void Trngl(int A, int B, int C)
 {
     if ( A < B + C && B < A + C && C < A + B)
-    Console.WriteLine($"yes");
+    Console.WriteLine("yes");
 
-    else Console.WriteLine ($" no");
+    else Console.WriteLine (" no");
 }
 int num_1 = int.Parse(Console.ReadLine()!);
 int num_2 = int.Parse(Console.ReadLine()!);
