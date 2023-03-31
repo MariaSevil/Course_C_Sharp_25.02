@@ -1,4 +1,9 @@
-﻿// Задайте двумерный массив. Найдите элементы, у которых обе позиции чётные, и замените эти элементы на их квадраты.
+﻿// Задайте двумерный массив. Найдите сумму элементов главной диагонали.
+//Например, задан массив:
+// 1 4 7
+// 5 9 2
+// 8 4 2
+// Сумма элементов главной диагонали: 1+9+2 = 12
 
 
 void Print(int[,] arr)
@@ -25,17 +30,20 @@ int[,] MassNums(int row, int column, int from, int to)
 
     return arr;
 }
-
-void Example(int[,] arr)
+int SumMass(int[,] array, int i, int j)
 {
-    for (int i = 1; i < arr.GetLength(0); i = i + 2) 
-    {
-        for (int j = 1; j < arr.GetLength(1); j += 2) ;
-
-        arr[i,j] = arr[i,j] * arr[i,j];
-
-    }
+    int sumarray = 0;
+    for (i = 0; i < array.GetLength(0); i++)
+        for (j = 0; j < array.GetLength(1); j++)
+        {
+            if (i == j) sumarray = sumarray + array[i, j];
+        }
+    array[i, j] = array[i, j] * array[i, j];
+    
+    return sumarray;
 }
+
+
 int num_row = int.Parse(Console.ReadLine()!);
 int num_column = int.Parse(Console.ReadLine()!);
 int start = int.Parse(Console.ReadLine()!);
@@ -43,5 +51,9 @@ int stop = int.Parse(Console.ReadLine()!);
 
 int[,] mass = MassNums(num_row, num_column, start, stop);
 Print(mass);
-Example(mass);
-Print(mass);
+int sum = SumMass(mass);
+Console.WriteLine("Summa: {sum}");
+
+    
+
+   
