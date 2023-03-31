@@ -30,7 +30,7 @@ int[,] MassNums(int row, int column, int from, int to)
 
     return arr;
 }
-int SumMass(int[,] array, int i, int j)
+int SumMass(int[,] array, int num)
 {
     int sumarray = 0;
     for (i = 0; i < array.GetLength(0); i++)
